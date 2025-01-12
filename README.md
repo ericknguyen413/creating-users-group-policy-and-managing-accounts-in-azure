@@ -148,6 +148,8 @@ Now, if we navigate back to the security log page, we can view them:
 
 Here we can see a bunch of different information like successful and failed log on attempts, who attempted them and from what IP address, along with the date and time they happened:
 
+![image](https://github.com/user-attachments/assets/5ab752b3-a268-4677-a982-80eaf8d59ca5)
+
 <h2>Active Directory: Creating Users, Group Policy, and Managing Accounts in Azure is Now Complete </h2>
 
 <b>We've successfully configured Remote Desktop for non-administrative users, automated user creation with PowerShell, and managed group policies. Additionally, we covered account lockouts and log monitoring to simulate a real-life IT environment!  </b>
