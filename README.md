@@ -80,9 +80,11 @@ Now, let's log out of this user, because we are going to set an account lockout 
 
 Go back to our DC and right click the start button > Run > type "gpmc.msc" to bring up the Group Policy Managment Console:
 
-
+![image](https://github.com/user-attachments/assets/8b143b7e-75c6-40b1-a2dc-9174583a6252)
 
 Expand Domains > mydomain.com > select Default Domain Policy:
+
+
 
 Under Computer Configuration expand Policies > Window Settings > Security Settings > select Account Lockout Policy:
 
