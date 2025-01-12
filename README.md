@@ -78,25 +78,41 @@ Now, let's log out of this user, because we are going to set an account lockout 
 
 ![image](https://github.com/user-attachments/assets/47e037f2-6ec5-4211-a319-133073bb90eb)
 
-Go back to our DC and right click the start button > Run > type "gpmc.msc" to bring up the Group Policy Managment Console:
+Go back to our DC and right click the start button > Run > type "gpmc.msc" to bring up the Group Policy Management Console:
 
 ![image](https://github.com/user-attachments/assets/8b143b7e-75c6-40b1-a2dc-9174583a6252)
 
-Expand Domains > mydomain.com > select Default Domain Policy:
+Expand Domains > mydomain.com > Right-click Default Domain Policy > Click Edit:
 
+![image](https://github.com/user-attachments/assets/284f577d-314e-480c-add1-a4d713eeb432)
 
+Under Computer Configuration, expand Policies > Window Settings > Security Settings > select Account Lockout Policy:
 
-Under Computer Configuration expand Policies > Window Settings > Security Settings > select Account Lockout Policy:
+![image](https://github.com/user-attachments/assets/158b8dcc-fde2-4aa8-8160-c95292e40720)
 
 Here we'll select "Account lockout threshhold" and choose to make the account lockout after 5 invalid attempts. Make sure to hit Apply:
 
+![image](https://github.com/user-attachments/assets/c5a03e27-2af1-4256-91d4-68396d7fd9fb)
+
 You can double-check this by going to the group policy settings and scrolling down to view the lockout policy:
+
+![image](https://github.com/user-attachments/assets/b9e30139-5ae8-440e-992c-fb6a4f4c3857)
 
 The policy will update automatically, but it will take some time. We can force the update on client-1 by signing into it as our admin and running "gpupdate /force" in the command line:
 
+![image](https://github.com/user-attachments/assets/68dd4457-175c-409c-9627-419e8c909089)
+
+![image](https://github.com/user-attachments/assets/1115d332-8a07-4135-8ced-a2c483f26e24)
+
 Now, we can sign out of client-1 and attempt to sign back into it with our user with an invalid password 5 times. A lockout message will appear:
 
+![image](https://github.com/user-attachments/assets/283a67eb-2053-4345-b63a-f60292517cb3)
+
+![image](https://github.com/user-attachments/assets/d47eb444-773e-4985-b880-54f4d72fc55f)
+
 To unlock the users account, head back to the DC > Active Directory Users and Computers > mydomain.com > _EMPLOYEES > double-click on the locked out user > Account tab > check the "Unlock account" box:
+
+![image](https://github.com/user-attachments/assets/703924c0-e0e3-4511-9a1f-0ec990cdefa6)
 
 (Alternatively you could right-click on the user > Reset Password and there will be a "Unlock users account" option. That way you can change the password at the same time you unlock it):
 
