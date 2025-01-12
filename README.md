@@ -116,19 +116,35 @@ To unlock the users account, head back to the DC > Active Directory Users and Co
 
 (Alternatively you could right-click on the user > Reset Password and there will be a "Unlock users account" option. That way you can change the password at the same time you unlock it):
 
-Now our user can sign into clinet-1 as normal:
+![image](https://github.com/user-attachments/assets/cb5527fa-3bf3-4aa2-a6bd-33b3498f4679)
+
+Now our user can sign into client-1 as normal:
+
+![image](https://github.com/user-attachments/assets/37ba2fa7-d927-4274-97c1-6ded708a9fcf)
 
 To disable users, go to the DC and in Active Directory Users and Computers > mydomain.com > _EMPLOYEES > right-click on user you want to disable > Disable:
 
+![image](https://github.com/user-attachments/assets/877e299a-58c2-4866-a19c-242c45c140dd)
+
 If we sign out of client-1 now, and try to sign back in using the disabled account, this message will appear:
+
+![image](https://github.com/user-attachments/assets/b8630a47-1eb3-41d5-84d7-494525adda45)
 
 To enable the user again go back to the DC and right-click again on the user and select Enable:
 
+![image](https://github.com/user-attachments/assets/36112acc-9b8d-4bb1-8123-d2c35468dc1e)
+
 The user can now log into client-1, so we'll do that and once we are logged in we'll view some logs through the event viewer. To do so, search for "Event Viewer" in the start search bar > Windows Logs > Security. You'll notice we cannot view these:
+
+![image](https://github.com/user-attachments/assets/f2bd0839-ea39-48ca-8429-2198a964bb95)
 
 This is because we are not an admin. Not to worry, we don't need to sign out of this whole client and sign in as Jane (our admin). We already know her credentials. We just need to close out of this window and open it again, but this time, as an administrator. It will have a pop-up asking for admin credentials:
 
+![image](https://github.com/user-attachments/assets/ff2992f2-230f-416e-ae9d-77907d4e3406)
+
 Now, if we navigate back to the security log page, we can view them:
+
+![image](https://github.com/user-attachments/assets/38ae3386-5b81-4bd0-a462-86d2af073f5d)
 
 Here we can see a bunch of different information like successful and failed log on attempts, who attempted them and from what IP address, along with the date and time they happened:
 
